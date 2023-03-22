@@ -1,47 +1,71 @@
 #include "main.h"
+
 /**
- * print_times_table - prints the times table for n.
- * @n: The multiplication table requested.
- * Return: Nothing.
+ * printnumber - prints number
+ * @nb: nb to be printed
  */
+
+void printnumber(int nb)
+{
+	if (nb < 0)
+	{
+		_putchar('-');
+		nb = nb * (-1);
+		printnumber(nb);
+	}
+	else if (nb >= 10)
+	{
+		printnumber(nb / 10);
+		printnumber(nb % 10);
+	}
+	else
+	{
+		_putchar(nb + 48);
+	}
+}
+
+/**
+ * print_times_table - prints number multiplication table
+ * @n: n the number of multiplication columns
+ */
+
 void print_times_table(int n)
 {
-	int i, j, res;
+	int i = 0;
+	int j;
+	int num = 0;
 
-	if (!(n > 15 || n < 0))
+	if (n >= 0 && n < 15)
 	{
-		for (i = 0; i <= n; i++)
+		while (i <= n)
 		{
-			for (j = 0; j <= n; j++)
+			j = 0;
+			while (j < (n + 1))
 			{
-				res = (i * j);
-				if (j != 0)
+				num = i * j;
+				printnumber(num);
+				if (j < n && i * (j + 1) < 10)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+				}
+				else if (j < n && i * (j + 1) >= 100)
 				{
 					_putchar(',');
 					_putchar(' ');
 				}
-				if (res < 10 && j != 0)
+				else if (j < n && i * (j + 1) >= 10)
 				{
+					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
-					_putchar((res % 10) + '0');
 				}
-				else if (res >= 10 && res < 100)
-				{
-					_putchar(' ');
-					_putchar((res / 10) + '0');
-					_putchar((res % 10) + '0');
-				}
-				else if (res >= 100 && j != 0)
-				{
-					_putchar((res / 100) + '0');
-					_putchar((res / 10) % 10 + '0');
-					_putchar((res % 10) + '0');
-				}
-				else
-					_putchar((res % 10) + '0');
+				j++;
 			}
 			_putchar('\n');
+			i++;
 		}
 	}
-}}
+}
