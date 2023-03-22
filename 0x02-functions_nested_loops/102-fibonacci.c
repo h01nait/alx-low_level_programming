@@ -1,26 +1,32 @@
-uu#include <stdio.h>
+#include <stdio.h>
 
 /**
-  * main - entry point of the program
-  *
-  * Return: always 0
-  */
+ * main - entry point
+ * description - print the first 50 fibonacci numbers
+ * Return: Always 0 (success)
+ */
+
 int main(void)
 {
-	unsigned long first = 1;
-	unsigned long second = 2;
-	int i = 0;
+	long int a;
+	long int b;
+	long int c;
+	int count;
 
-	while (i < 50)
+	count = 0;
+	a = 1;
+	b = 2;
+	while (count < 50)
 	{
-		printf("%lu", first);
-		if (i < 49)
+		printf("%ld", a);
+		if (a < 20000000000)
 		{
-			second += first;
-			first = second - first;
 			printf(", ");
 		}
-		i++;
+		c = a + b;
+		a = b;
+		b = c;
+		count++;
 	}
 	printf("\n");
 	return (0);
