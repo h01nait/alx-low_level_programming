@@ -1,30 +1,32 @@
-i#include "main.h"
+#include <stdio.h>
+#include "main.h"
 
 /**
- * print_diagonal - print diagonal
- *
- * @n: dimention of diagnoal 2D
- * Return: nothing
- */
-void	print_diagonal(int n)
+  * print_diagonal - draws a diagonal line
+  * @n: the number of lines
+  *
+  * Return: void
+  */
+void print_diagonal(int n)
 {
-	int	row;
-	int	col;
+	int i = 0;
+	int j = 0;
 
-	row = 0;
-	if (n <= 0)
-		_putchar('\n');
-	while (row < n)
+	if (n > 0)
 	{
-		col = 0;
-		while (col < row)
+		while (i < n)
 		{
-			_putchar(' ');
-			col++;
+			j = i;
+			while (j)
+			{
+				_putchar(' ');
+				j--;
+			}
+			_putchar('\\');
+			_putchar('\n');
+			i++;
 		}
-		_putchar('\\');
-		_putchar('\n');
-		row++;
 	}
+	else
+		_putchar('\n');
 }
-
