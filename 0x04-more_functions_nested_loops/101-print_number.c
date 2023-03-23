@@ -30,3 +30,4 @@ void print_number(int n)
 		print_number(n / 10);
 		print_number(n % 10);
 	}
+}
