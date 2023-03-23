@@ -1,21 +1,16 @@
-i#include <stdio.h>
 #include "main.h"
 
 /**
-  * print_line - draws a straight line
-  * @n: the lenght of the line
-  *
-  * Return: void
-  */
-void print_line(int n)
+ * print_line - prints line of length n
+ *
+ * @n: length of the length n
+ * Return: nothing
+ */
+void	print_line(int n)
 {
-	if (n > 0)
+	while (--n >= 0)
 	{
-		while (n)
-		{
-			_putchar('_');
-			n--;
-		}
+		_putchar('_');
 	}
 	_putchar('\n');
 }
