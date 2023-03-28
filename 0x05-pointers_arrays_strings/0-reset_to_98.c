@@ -1,10 +1,10 @@
 /**
  * reset_to_98 - function that change the value of the num to 98
- * main - check the code
  *
- * Return: Always 0.
+ * @num: pointer to number address
+ * Return: void
  */
-void	reset_to_98(int *n)
+void	reset_to_98(int *num)
 {
-	*n = 98;
+	*num = 98;
 }
