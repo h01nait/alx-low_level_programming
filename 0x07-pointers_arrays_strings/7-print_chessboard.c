@@ -1,25 +1,25 @@
 #include "main.h"
-/**
- * print_chessboard - print cheess board of 2 dimensions
- *
- * @a: 2 dimensions array of characters
- * Return: void
- */
-void	print_chessboard(char (*a)[8])
-{
-	int	row;
-	int	col;
 
-	row = 0;
-	while (row < CHESSBOARD_LENGTH)
+/**
+  * print_chessboard - prints the shessboard
+  * @a: the 2 demontions array
+  *
+  * Return: void
+  */
+void print_chessboard(char (*a)[8])
+{
+	int i = 0;
+	int j = 0;
+
+	while (i < 8)
 	{
-		col  = 0;
-		while (col < CHESSBOARD_LENGTH)
+		while (j < 8)
 		{
-			_putchar(a[row][col]);
-			col++;
+			_putchar(a[i][j]);
+			j++;
 		}
 		_putchar('\n');
-		row++;
+		j = 0;
+		i++;
 	}
 }
