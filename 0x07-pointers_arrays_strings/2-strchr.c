@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _strchr - returns pointer to the first occur of character c or NULL
  *
