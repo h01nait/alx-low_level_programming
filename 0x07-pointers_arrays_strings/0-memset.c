@@ -1,10 +1,10 @@
-#include "main.h"
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * _memset - function that fill buffer of memory with sepecific character
  *
- * Return: Nothing.
+ * @s: the buffer to fill
+ * @b: the character to fill buffer with
+ * @n: size length that should be filled
+ * Return: buffer
  */
 char	*_memset(char *s, char b, unsigned int n)
 {
