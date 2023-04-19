@@ -1,4 +1,5 @@
 # ignore all main.c
 *-main.c
+~9main.c
 # adding file
 !2-main.c
